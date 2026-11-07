@@ -1,0 +1,765 @@
+/* =========================================
+   1. CONFIGURATION GÉNÉRALE
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
+}
+:root {
+    --fond: #08111f;
+    --fond-secondaire: #101d30;
+    --bleu: #00aaff;
+    --blanc: #ffffff;
+    --gris: #b5c0d0;
+}
+
+body {
+    background-color: var(--fond);
+    color: var(--blanc);
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+section {
+    padding: 100px 8%;
+}
+
+
+/* =========================================
+   2. HEADER ET NAVIGATION
+========================================= */
+
+header {
+    width: 100%;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: rgba(8, 17, 31, 0.95);
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.logo h2 {
+    font-size: 26px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.logo span,
+.footer-contenu span {
+    color: var(--bleu);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+nav ul li a {
+    font-size: 14px;
+    color: var(--gris);
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--bleu);
+}
+
+
+/* =========================================
+   3. SECTION ACCUEIL
+========================================= */
+
+#accueil {
+    min-height: 90vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.accueil-contenu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 60px;
+    width: 100%;
+}
+
+.texte-accueil {
+    flex: 1;
+}
+
+.bienvenue {
+    color: var(--bleu);
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.texte-accueil h1 {
+    font-size: 45px;
+    line-height: 1.3;
+    margin-bottom: 15px;
+}
+
+.texte-accueil h1 span {
+    color: var(--bleu);
+}
+
+.texte-accueil h2 {
+    font-size: 25px;
+    color: var(--gris);
+    margin-bottom: 20px;
+}
+
+.texte-accueil p {
+    color: var(--gris);
+    max-width: 600px;
+    margin-bottom: 30px;
+}
+
+.boutons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--bleu);
+    color: var(--fond);
+
+    padding: 12px 25px;
+    border-radius: 6px;
+
+    font-weight: bold;
+    border: 2px solid var(--bleu);
+
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: transparent;
+    color: var(--bleu);
+}
+
+.btn.secondaire {
+    background-color: transparent;
+    color: var(--bleu);
+}
+
+.btn.secondaire:hover {
+    background-color: var(--bleu);
+    color: var(--fond);
+}
+
+.photo-profil {
+    width: 330px;
+    height: 330px;
+
+    border-radius: 50%;
+    overflow: hidden;
+
+    border: 5px solid var(--bleu);
+
+    box-shadow: 0 0 30px rgba(0,170,255,0.3);
+}
+
+.photo-profil img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* =========================================
+   4. TITRES DES SECTIONS
+========================================= */
+
+.titre-section {
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.titre-section::after {
+    content: "";
+    display: block;
+
+    width: 70px;
+    height: 4px;
+
+    background-color: var(--bleu);
+
+    margin: 12px auto 40px;
+    border-radius: 5px;
+}
+
+.description-section {
+    text-align: center;
+    color: var(--gris);
+
+    max-width: 700px;
+    margin: 0 auto 50px;
+}
+
+
+/* =========================================
+   5. SECTION À PROPOS
+========================================= */
+
+#apropos {
+    background-color: var(--fond-secondaire);
+}
+
+.apropos-contenu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 60px;
+}
+
+.apropos-image {
+    width: 280px;
+    height: 350px;
+
+    border-radius: 15px;
+    overflow: hidden;
+
+    border: 3px solid var(--bleu);
+}
+
+.apropos-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.apropos-texte {
+    flex: 1;
+}
+
+.apropos-texte h3 {
+    font-size: 27px;
+    margin-bottom: 20px;
+}
+
+.apropos-texte p {
+    color: var(--gris);
+    margin-bottom: 18px;
+}
+
+.apropos-texte .btn {
+    margin-top: 10px;
+}
+
+
+/* =========================================
+   6. SECTION COMPÉTENCES
+========================================= */
+
+.competences-conteneur {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.competence-carte {
+    background-color: var(--fond-secondaire);
+
+    padding: 35px 20px;
+    text-align: center;
+
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.07);
+
+    transition: 0.3s;
+}
+
+.competence-carte:hover {
+    transform: translateY(-10px);
+    border-color: var(--bleu);
+    box-shadow: 0 5px 25px rgba(0,170,255,0.15);
+}
+
+.competence-carte i {
+    font-size: 45px;
+    color: var(--bleu);
+    margin-bottom: 15px;
+}
+
+.competence-carte h3 {
+    font-size: 21px;
+    margin-bottom: 10px;
+}
+
+.competence-carte p {
+    color: var(--gris);
+    font-size: 14px;
+}
+
+
+/* =========================================
+   7. SECTION PROJETS
+========================================= */
+
+#projets {
+    background-color: var(--fond-secondaire);
+}
+
+.projets-conteneur {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.projet-carte {
+    background-color: var(--fond);
+
+    border-radius: 12px;
+    overflow: hidden;
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    transition: 0.3s;
+}
+
+.projet-carte:hover {
+    transform: translateY(-8px);
+    border-color: var(--bleu);
+}
+
+.projet-carte img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+}
+
+.projet-informations {
+    padding: 22px;
+}
+
+.projet-informations h3 {
+    font-size: 21px;
+    margin-bottom: 12px;
+}
+
+.projet-informations p {
+    color: var(--gris);
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    margin-bottom: 20px;
+}
+
+.technologies span {
+    background-color: rgba(0,170,255,0.12);
+
+    color: var(--bleu);
+
+    padding: 5px 10px;
+    border-radius: 5px;
+
+    font-size: 12px;
+}
+
+.lien-projet {
+    color: var(--bleu);
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.lien-projet i {
+    margin-left: 5px;
+    transition: 0.3s;
+}
+
+.lien-projet:hover i {
+    margin-left: 12px;
+}
+
+
+/* =========================================
+   8. SECTION PARCOURS
+========================================= */
+
+.parcours-conteneur {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 30px;
+}
+
+.parcours-carte {
+    background-color: var(--fond-secondaire);
+
+    padding: 35px;
+
+    border-left: 4px solid var(--bleu);
+    border-radius: 10px;
+
+    transition: 0.3s;
+}
+
+.parcours-carte:hover {
+    transform: translateY(-5px);
+}
+
+.parcours-carte i {
+    font-size: 35px;
+    color: var(--bleu);
+    margin-bottom: 15px;
+}
+
+.parcours-carte h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.parcours-carte h4 {
+    color: var(--bleu);
+    margin-bottom: 15px;
+}
+
+.parcours-carte p {
+    color: var(--gris);
+}
+
+
+/* =========================================
+   9. SECTION CONTACT
+========================================= */
+
+#contact {
+    background-color: var(--fond-secondaire);
+}
+
+.contact-conteneur {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 50px;
+}
+
+.contact-element {
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.contact-element i {
+    font-size: 25px;
+    color: var(--bleu);
+
+    background-color: var(--fond);
+
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+}
+
+.contact-element h3 {
+    font-size: 18px;
+}
+
+.contact-element p,
+.contact-element a {
+    color: var(--gris);
+    font-size: 14px;
+}
+
+.contact-element a:hover {
+    color: var(--bleu);
+}
+
+
+/* Formulaire */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+form input,
+form textarea {
+    width: 100%;
+
+    padding: 15px;
+
+    background-color: var(--fond);
+
+    border: 1px solid rgba(255,255,255,0.1);
+
+    border-radius: 7px;
+
+    color: var(--blanc);
+
+    outline: none;
+    font-size: 15px;
+}
+
+form input:focus,
+form textarea:focus {
+    border-color: var(--bleu);
+}
+
+form textarea {
+    resize: vertical;
+}
+
+form button {
+    width: fit-content;
+}
+
+
+/* =========================================
+   10. FOOTER
+========================================= */
+
+footer {
+    background-color: #050b14;
+
+    padding: 50px 8%;
+
+    text-align: center;
+}
+
+.footer-contenu h2 {
+    font-size: 27px;
+    margin-bottom: 15px;
+}
+
+.footer-contenu p {
+    color: var(--gris);
+    margin-bottom: 20px;
+}
+
+.reseaux-sociaux {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+    margin-bottom: 25px;
+}
+
+.reseaux-sociaux a {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--fond-secondaire);
+
+    border-radius: 50%;
+
+    color: var(--bleu);
+    font-size: 20px;
+
+    transition: 0.3s;
+}
+
+.reseaux-sociaux a:hover {
+    background-color: var(--bleu);
+    color: var(--fond);
+    transform: translateY(-5px);
+}
+
+.copyright {
+    font-size: 13px;
+    margin-top: 25px;
+}
+
+
+/* =========================================
+   11. RESPONSIVE DESIGN
+========================================= */
+
+/* Tablettes */
+
+@media screen and (max-width: 992px) {
+
+    header {
+        padding: 20px 4%;
+    }
+
+    nav ul {
+        gap: 12px;
+    }
+
+    section {
+        padding: 80px 5%;
+    }
+
+    .texte-accueil h1 {
+        font-size: 35px;
+    }
+
+    .photo-profil {
+        width: 270px;
+        height: 270px;
+    }
+
+    .competences-conteneur,
+    .projets-conteneur {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* Téléphones */
+
+@media screen and (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    nav ul {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    nav ul li a {
+        font-size: 12px;
+    }
+
+    #accueil {
+        min-height: auto;
+    }
+
+    .accueil-contenu {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .texte-accueil h1 {
+        font-size: 32px;
+    }
+
+    .texte-accueil h2 {
+        font-size: 21px;
+    }
+
+    .boutons {
+        justify-content: center;
+    }
+
+    .photo-profil {
+        width: 230px;
+        height: 230px;
+    }
+
+    .apropos-contenu {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .apropos-image {
+        width: 230px;
+        height: 280px;
+    }
+
+    .competences-conteneur,
+    .projets-conteneur,
+    .parcours-conteneur,
+    .contact-conteneur {
+        grid-template-columns: 1fr;
+    }
+
+    .titre-section {
+        font-size: 28px;
+    }
+
+}
+
+
+/* Petits téléphones */
+
+@media screen and (max-width: 480px) {
+
+    section {
+        padding: 65px 5%;
+    }
+
+    .logo h2 {
+        font-size: 22px;
+    }
+
+    .texte-accueil h1 {
+        font-size: 27px;
+    }
+
+    .texte-accueil h2 {
+        font-size: 18px;
+    }
+
+    .btn {
+        padding: 10px 16px;
+        font-size: 13px;
+    }
+
+    .competence-carte,
+    .parcours-carte {
+        padding: 25px 15px;
+    }
+
+    .projet-informations {
+        padding: 18px;
+    }
+
+}
